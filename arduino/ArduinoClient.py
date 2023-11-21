@@ -34,13 +34,11 @@ class ArduinoClient:
         self.serial = serial.Serial(
             port=_find_comport(),
             baudrate=115200,
-            timeout=0.1  # sets read frequency
+            timeout=0.01  # sets read frequency
         )
 
     def read_serial_port(self) -> str:
         return self.serial.readline().decode().strip()
-        self.serial.flushInput()
-        return data
 
     def flush_input(self):
         self.serial.flushInput()
