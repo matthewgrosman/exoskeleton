@@ -1,4 +1,3 @@
-
 import time
 import tkinter as tk
 
@@ -44,9 +43,9 @@ if __name__ == '__main__':
 
         if None not in encoder_data.values():
             theta1, theta2 = get_end_effector(
-                encoder_data[ArduinoClient.ENCODER_0],
-                encoder_data[ArduinoClient.ENCODER_1],
-                encoder_data[ArduinoClient.ENCODER_2]
+                float(encoder_data[ArduinoClient.ENCODER_0]),
+                float(encoder_data[ArduinoClient.ENCODER_1]),
+                float(encoder_data[ArduinoClient.ENCODER_2])
             )
 
             app.update_display(theta1, theta2)
