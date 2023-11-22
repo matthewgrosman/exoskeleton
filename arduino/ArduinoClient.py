@@ -46,5 +46,5 @@ class ArduinoClient:
     def close(self):
         self.serial.close()
 
-    def __del__(self):
+    def __exit__(self):
         self.serial.close()
