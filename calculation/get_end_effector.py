@@ -1,6 +1,6 @@
 import numpy as np
 
-from matlab.constants import S4R_ALPHA, S4R_BETA, S4R_GAMMA, S4R_ETA, S4R_THETA_INITIAL, \
+from calculation.constants import S4R_ALPHA, S4R_BETA, S4R_GAMMA, S4R_ETA, S4R_THETA_INITIAL, \
     THETA_1_INITIAL, THETA_5_INITIAL, DH_A, DH_ALPHA, DH_D, G, H
 
 

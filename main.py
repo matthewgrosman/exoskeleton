@@ -3,7 +3,7 @@ import tkinter as tk
 
 from arduino.ArduinoClient import ArduinoClient, parse_port_data, validate_port_data
 from frontend.GUIClient import GUIClient
-from matlab.get_end_effector import get_end_effector
+from calculation.get_end_effector import get_end_effector
 
 
 if __name__ == '__main__':
