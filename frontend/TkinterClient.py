@@ -1,14 +1,14 @@
 import tkinter as tk
 
 
-class GUIClient:
+class TkinterClient:
     def __init__(self, root):
         self.root = root
         self.root.title("Exoskeleton")
 
-        self.theta1 = tk.IntVar()
+        self.theta1 = tk.DoubleVar()
+        self.theta2 = tk.DoubleVar()
         self.theta1.set(0)
-        self.theta2 = tk.IntVar()
         self.theta2.set(0)
 
         # Create left column
@@ -27,6 +27,15 @@ class GUIClient:
         self.label_number2 = tk.Label(self.right_frame, textvariable=self.theta2, font=("Helvetica", 18))
         self.label_number2.pack()
 
-    def update_display(self, theta_1, theta_2):
+    def update_display(self, theta_1: float, theta_2: float) -> None:
+        """
+        Function that takes in two floats to display for theta angle 1 and 2, respectively, updates the
+        tkinter window with the new values.
+
+        :param theta_1: Float representing the value to display for theta angle 1.
+        :param theta_2: Float representing the value to display for theta angle 2.
+        :return:        None.
+        """
         self.theta1.set(theta_1)
         self.theta2.set(theta_2)
+        self.root.update()
