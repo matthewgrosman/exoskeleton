@@ -1,6 +1,7 @@
 # TODO: Figure out why Tkinter window is opening twice.
 # TODO: Figure out way to actually close serial port connection when user exits desktop client.
 # TODO: Clean up frontend display.
+# TODO: Move functions out from ArduinoClient into a util class.
 
 
 import time
