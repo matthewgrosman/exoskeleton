@@ -5,6 +5,19 @@ import serial.tools.list_ports
 import arduino.constants as constants
 
 
+def validate_port_data(port_data: str) -> bool:
+    """
+    Function that validates incoming Arduino input is valid. Valid data comes in the format:
+    <ENCODER_NAME>:<ENCODER_VALUE>. ENCODER_NAME must be either "Encoder1", "Encoder2", or
+    "Encoder3", and ENCODER_VALUE must be number (can be a floating point).
+
+    :param port_data:   String containing a line of Arduino input.
+    :return:            Bool denoting if this is valid input.
+    """
+    pattern = re.compile(constants.VALID_INPUT_REGEX)
+    return bool(pattern.match(port_data))
+
+
 def parse_port_data(port_data: str) -> (str, str):
     """
     Function that takes in a string containing a line of Arduino input and extracts/returns
@@ -16,10 +29,6 @@ def parse_port_data(port_data: str) -> (str, str):
                         above.
     :return:            Tuple containing encoder name and encoder value.
     """
-    if not _validate_port_data(port_data):
-        raise Exception("Arduino input is invalid: ", port_data, " Please ensure Arduino input is in the format "
-                        "<ENCODER_NAME>:<ENCODER_VALUE>")
-
     port_data_split = port_data.split(":")
     encoder_name = port_data_split[0]
     encoder_value = port_data_split[1]
@@ -43,19 +52,6 @@ def _find_comport() -> str:
             return port.name
 
     raise Exception("Arduino not detected.")
-
-
-def _validate_port_data(port_data: str) -> bool:
-    """
-    Function that validates incoming Arduino input is valid. Valid data comes in the format:
-    <ENCODER_NAME>:<ENCODER_VALUE>. ENCODER_NAME must be either "Encoder1", "Encoder2", or
-    "Encoder3", and ENCODER_VALUE must be number (can be a floating point).
-
-    :param port_data:   String containing a line of Arduino input.
-    :return:            Bool denoting if this is valid input.
-    """
-    pattern = re.compile(constants.VALID_INPUT_REGEX)
-    return bool(pattern.match(port_data))
 
 
 class ArduinoClient:
