@@ -1,3 +1,12 @@
+"""
+All credit for these calculations goes to: https://drive.google.com/drive/folders/18XZ3T8iQ1MzVMngPpcYfKfxNLCJTCkb_
+
+I've converted the MATLAB code from the linked folder into Python so it's easier
+to package/distribute for this project. All of the logic comes from the MATLAB folder.
+
+Here is the original research paper that these calculations were used in: https://cctomm.ca/2023/CCToMM_M3_Symposium_paper_13.pdf
+"""
+
 import numpy as np
 
 from calculation.constants import S4R_ALPHA, S4R_BETA, S4R_GAMMA, S4R_ETA, S4R_THETA_INITIAL, \
