@@ -6,6 +6,8 @@ from arduino.ArduinoClient import ArduinoClient, parse_port_data, validate_port_
 from frontend.TkinterClient import TkinterClient
 from calculation.get_end_effector import get_end_effector
 
+# Time interval in seconds between each time we read data from the sensors.
+DATA_REFRESH_TIME = 0.20
 
 if __name__ == '__main__':
     root = tk.Tk()
@@ -56,6 +58,6 @@ if __name__ == '__main__':
                 encoder_data[encoder] = None
 
             # Brief pause so we aren't refreshing values too quickly
-            time.sleep(0.20)
+            time.sleep(DATA_REFRESH_TIME)
 
     arduino_client.close()
