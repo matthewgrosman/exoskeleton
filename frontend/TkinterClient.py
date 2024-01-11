@@ -1,10 +1,6 @@
 import tkinter as tk
-import time
-import tkinter.font
 
 from frontend.constants import FONT, WINDOW_TITLE, WINDOW_SIZE, JOINT_A_NAME, JOINT_B_NAME
-
-# FONT = "Arial"
 
 
 class TkinterClient:
