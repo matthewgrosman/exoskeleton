@@ -48,17 +48,3 @@ class TkinterClient:
         label = tk.Label(frame, textvariable=theta, font=(FONT, 22))
         label.pack()
         return frame
-
-
-if __name__ == '__main__':
-    root = tk.Tk()
-    app = TkinterClient(root)
-    print(tkinter.font.families())
-    t1 = 1.34728934792
-    t2 = 2.8723489294237
-
-    while True:
-        time.sleep(0.5)
-        app.update_display(t1, t2)
-        t1 += 1.1231234
-        t2 += 1.12839
