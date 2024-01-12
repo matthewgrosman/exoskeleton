@@ -8,8 +8,8 @@ import arduino.constants as constants
 def validate_port_data(port_data: str) -> bool:
     """
     Function that validates incoming Arduino input is valid. Valid data comes in the format:
-    <ENCODER_NAME>:<ENCODER_VALUE>. ENCODER_NAME must be either "Encoder1", "Encoder2", or
-    "Encoder3", and ENCODER_VALUE must be number (can be a floating point).
+    <ENCODER_NAME>:<ENCODER_VALUE>. ENCODER_NAME must be either "Encoder0", "Encoder1", or
+    "Encoder2", and ENCODER_VALUE must be number (can be a floating point).
 
     :param port_data:   String containing a line of Arduino input.
     :return:            Bool denoting if this is valid input.
